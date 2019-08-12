@@ -10,13 +10,22 @@
   <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
 </head>
 <body style='overflow: hidden;'>
-  <a-scene embedded arjs>
+<!--   <a-scene embedded arjs>
       <a-marker preset="hiro">
-             <!-- <a-box position='0 0 0' material='color: yellow;'></a-box> -->
-        <a-entity gltf-model="##tree"></a-entity>
-               <!--<a-entity gltf-model="url(ptlogo.glb)" animation-mixer></a-entity> -->
+              <a-box position='0 0 0' material='color: yellow;'></a-box> 
+               <a-entity gltf-model="url(ptlogo.glb)" animation-mixer></a-entity> 
       </a-marker>
   <a-entity camera></a-entity>
+  </a-scene> -->
+   <a-scene shadow="type: pcfsoft" embedded arjs='sourceType: webcam; debugUIEnabled: false;' debug>
+
+    <a-marker preset="hiro">
+      <a-entity shadow="cast: true" gltf-model="https://cdn.glitch.com/0d1945ac-ed6f-44be-9903-e1c1626575a4%2Fcar.glb?1548349423434" position="0 0 0" crossOrigin="anonymous" response-type="arraybuffer" rotation="0 0 0" scale="0.05 0.05 0.05">
+      </a-entity>
+    </a-marker>
+    <a-entity light="type: ambient; color: #CCC"></a-entity>
+    <a-entity camera></a-entity>
+
   </a-scene>
 </body>
 </html>
